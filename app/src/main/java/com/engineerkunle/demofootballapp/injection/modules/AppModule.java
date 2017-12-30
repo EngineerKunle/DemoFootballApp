@@ -3,18 +3,24 @@ package com.engineerkunle.demofootballapp.injection.modules;
 import android.content.Context;
 import android.support.annotation.NonNull;
 
+import com.engineerkunle.demofootballapp.DemoFootballApp;
 import com.engineerkunle.demofootballapp.injection.scopes.AppScope;
 
+import dagger.Module;
+import dagger.Provides;
+
+@Module
 public class AppModule {
 
-    private Context appContext;
+    private final DemoFootballApp demoFootballApp;
 
-    public AppModule(@NonNull Context appContext) {
-        this.appContext = appContext;
+    public AppModule(@NonNull DemoFootballApp demoFootballApp) {
+        this.demoFootballApp = demoFootballApp;
     }
 
     @AppScope
+    @Provides
     Context provideContext() {
-        return appContext;
+        return demoFootballApp;
     }
 }

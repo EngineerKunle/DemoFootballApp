@@ -4,8 +4,7 @@ public class BasePresenterImpl <V extends BaseView> implements BasePresenter<V> 
 
     private V view;
 
-    public BasePresenterImpl(V view) {
-        this.view = view;
+    public BasePresenterImpl() {
     }
 
     @Override
