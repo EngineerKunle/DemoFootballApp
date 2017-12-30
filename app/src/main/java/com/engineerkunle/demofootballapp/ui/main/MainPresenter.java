@@ -5,5 +5,5 @@ import com.engineerkunle.demofootballapp.ui.base.BasePresenter;
 
 @ActivityScope
 public interface MainPresenter <V extends  MainView> extends BasePresenter<V>{
-    void buttonPressed();
+    void buttonPressed(String text);
 }

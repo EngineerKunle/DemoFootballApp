@@ -15,7 +15,7 @@ public class MainPresenterImpl<V extends MainView> extends BasePresenterImpl<V>
     }
 
     @Override
-    public void buttonPressed() {
+    public void buttonPressed(String text) {
+        getView().showToast(text);
     }
-
 }

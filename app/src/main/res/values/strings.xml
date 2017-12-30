@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Demo Football App</string>
+
+    <string name="debug_toast_message">Button has been clicked</string>
 </resources>
