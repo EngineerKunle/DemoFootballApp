@@ -6,7 +6,7 @@ import android.widget.Toast;
 
 import com.engineerkunle.demofootballapp.DemoFootballApp;
 import com.engineerkunle.demofootballapp.R;
-import com.engineerkunle.demofootballapp.injection.modules.MainActivityModule;
+import com.engineerkunle.demofootballapp.injection.modules.ActivityModule;
 import com.engineerkunle.demofootballapp.ui.base.BaseActivity;
 
 import javax.inject.Inject;
@@ -30,7 +30,7 @@ public class MainActivity extends BaseActivity implements MainView {
 
         ButterKnife.bind(this);
         DemoFootballApp.getAppComponent()
-                .plus(new MainActivityModule(this))
+                .plus(new ActivityModule(this))
                 .inject(this);
 
         presenter.attach(this);

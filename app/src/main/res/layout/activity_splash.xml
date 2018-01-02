@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context=".ui.splash.SplashActivity">
+
+    <ImageView
+        android:id="@+id/splash_screen_logo"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerInParent="true"
+        android:src="@drawable/football_demo_splash"/>
+
+    <TextView
+        style="@style/SplashScreenText"
+        android:text="@string/app_name"
+        android:layout_below="@+id/splash_screen_logo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/splash_screen_text_size"/>
+
+</RelativeLayout>

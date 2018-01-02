@@ -15,6 +15,16 @@ public class MainPresenterImpl<V extends MainView> extends BasePresenterImpl<V>
     }
 
     @Override
+    public void attach(V view) {
+        super.attach(view);
+    }
+
+    @Override
+    public void detach() {
+        super.detach();
+    }
+
+    @Override
     public void buttonPressed(String text) {
         getView().showToast(text);
     }

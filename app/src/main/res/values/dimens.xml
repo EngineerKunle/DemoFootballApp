@@ -1,0 +1,9 @@
+<resources>
+    <dimen name="fab_margin">16dp</dimen>
+
+    //Splash scrren
+    <dimen name="splash_screen_top_image">150dp</dimen>
+    <dimen name="splash_screen_text_size">24sp</dimen>
+    <dimen name="splash_screen_text_size_margin_left">100dp</dimen>
+    <dimen name="splash_screen_text_size_margin_top">20dp</dimen>
+</resources>

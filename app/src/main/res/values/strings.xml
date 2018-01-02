@@ -2,4 +2,6 @@
     <string name="app_name">Demo Football App</string>
 
     <string name="debug_toast_message">Button has been clicked</string>
+    <string name="title_activity_splash">SplashActivity</string>
+    <string name="demoApp">Football Stats</string>
 </resources>
