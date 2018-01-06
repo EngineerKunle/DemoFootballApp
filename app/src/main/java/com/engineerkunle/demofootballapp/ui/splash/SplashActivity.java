@@ -19,11 +19,6 @@ public class SplashActivity extends BaseActivity implements SplashView {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_splash);
-
-        DemoFootballApp.getAppComponent()
-                .plus(new ActivityModule(this))
-                .inject(this);
         splashPresenter.attach(this);
     }
 
@@ -38,5 +33,22 @@ public class SplashActivity extends BaseActivity implements SplashView {
         Intent intent = new Intent(SplashActivity.this, MainActivity.class);
         startActivity(intent);
         finish();
+    }
+
+    @Override
+    protected void initComponent() {
+        DemoFootballApp.getAppComponent()
+                .plus(new ActivityModule(this))
+                .inject(this);
+    }
+
+    @Override
+    protected int getLayoutResource() {
+        return R.layout.activity_splash;
+    }
+
+    @Override
+    protected boolean activateToolBar() {
+        return false;
     }
 }

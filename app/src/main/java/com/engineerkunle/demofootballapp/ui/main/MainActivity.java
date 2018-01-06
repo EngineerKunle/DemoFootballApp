@@ -26,13 +26,8 @@ public class MainActivity extends BaseActivity implements MainView {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
 
         ButterKnife.bind(this);
-        DemoFootballApp.getAppComponent()
-                .plus(new ActivityModule(this))
-                .inject(this);
-
         presenter.attach(this);
     }
 
@@ -52,4 +47,20 @@ public class MainActivity extends BaseActivity implements MainView {
         presenter.buttonPressed("Button pressed");
     }
 
+    @Override
+    protected void initComponent() {
+        DemoFootballApp.getAppComponent()
+                .plus(new ActivityModule(this))
+                .inject(this);
+    }
+
+    @Override
+    protected int getLayoutResource() {
+        return R.layout.activity_main;
+    }
+
+    @Override
+    protected boolean activateToolBar() {
+        return true;
+    }
 }

@@ -22,4 +22,17 @@
     <style name="SplashTheme" parent="Theme.AppCompat.NoActionBar">
     </style>
 
+    <!--Tool bar-->
+    <style name="BaseToolBar" parent="ThemeOverlay.AppCompat.ActionBar">
+        <item name="android:textColor">@color/app_white</item>
+        <item name="android:textColorSecondary">@color/app_white</item>
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="actionOverflowButtonStyle">@style/customOverflowButtonStyle</item>
+    </style>
+
+    <!--Over FLow icon-->
+    <style name="customOverflowButtonStyle" parent="Widget.AppCompat.ActionButton.Overflow">
+        <item name="android:tint">@color/app_white</item>
+    </style>
+
 </resources>
