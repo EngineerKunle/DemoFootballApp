@@ -7,4 +7,7 @@
 
     <string name="toolbar_settings">Settings</string>
     <string name="toolbar_profile">Profile</string>
+    <string name="player_name">Name</string>
+    <string name="player_appearance">Appearances</string>
+    <string name="player_goals_stats">Goals</string>
 </resources>
