@@ -3,10 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/score_list"
-        android:title="@string/app_name"
+        android:id="@+id/toolbar_setting"
+        android:title="@string/toolbar_settings"
         app:showAsAction="never"
-        android:orderInCategory="100"
-        />
+        android:orderInCategory="100"/>
+
+    <item
+        android:id="@+id/toolbar_profile"
+        android:title="@string/toolbar_profile"
+        app:showAsAction="never"
+        android:orderInCategory="200"/>
 
 </menu>

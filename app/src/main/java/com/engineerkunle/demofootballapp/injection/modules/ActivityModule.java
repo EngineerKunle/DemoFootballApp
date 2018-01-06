@@ -4,9 +4,6 @@ import android.app.Activity;
 import android.content.Context;
 
 import com.engineerkunle.demofootballapp.injection.scopes.ActivityScope;
-import com.engineerkunle.demofootballapp.ui.main.MainPresenter;
-import com.engineerkunle.demofootballapp.ui.main.MainPresenterImpl;
-import com.engineerkunle.demofootballapp.ui.main.MainView;
 import com.engineerkunle.demofootballapp.ui.splash.SplashPresenter;
 import com.engineerkunle.demofootballapp.ui.splash.SplashPresenterImpl;
 import com.engineerkunle.demofootballapp.ui.splash.SplashView;
@@ -27,12 +24,6 @@ public class ActivityModule {
     @ActivityScope
     Context provideContext() {
         return activity;
-    }
-
-    @Provides
-    @ActivityScope
-    MainPresenter<MainView> providesMainPresenter(MainPresenterImpl<MainView> presenter) {
-        return presenter;
     }
 
     @Provides

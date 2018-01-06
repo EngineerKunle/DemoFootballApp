@@ -59,9 +59,16 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseView
 
         int id = item.getItemId();
 
-        if (id == R.id.score_list) {
-            Toast.makeText(this, "Scores are 1-0", Toast.LENGTH_LONG).show();
-            return true;
+        switch (id) {
+            case R.id.toolbar_profile :
+                Toast.makeText(this, "Profile clicked", Toast.LENGTH_LONG).show();
+                break;
+
+            case R.id.toolbar_setting :
+                Toast.makeText(this, "Settings page", Toast.LENGTH_LONG).show();
+                break;
+
+            default: Toast.makeText(this, "error ??", Toast.LENGTH_LONG).show();
         }
         return super.onOptionsItemSelected(item);
     }
