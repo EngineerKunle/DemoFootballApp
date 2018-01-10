@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply from: 'config.gradle'
 
 android {
     compileSdkVersion 26
@@ -9,6 +10,10 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+
+        //Set Configs
+        buildConfigField "String", "BASE_URL", baseurl
     }
     buildTypes {
         release {
@@ -17,6 +22,7 @@ android {
         }
     }
 }
+
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
@@ -44,6 +50,7 @@ dependencies {
 
     //retrofit
     compile 'com.squareup.retrofit2:retrofit:2.3.0'
+    compile 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
 
     //cardview
     compile 'com.android.support:cardview-v7:26.1.0'
@@ -51,5 +58,7 @@ dependencies {
     //recycler view
     compile 'com.android.support:recyclerview-v7:26.1.0'
 
+    //Gson
+    compile 'com.google.code.gson:gson:2.8.2'
 
 }
