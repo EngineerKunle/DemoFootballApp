@@ -1,5 +1,5 @@
 apply plugin: 'com.android.application'
-apply from: 'config.gradle'
+apply from: 'config_app.gradle'
 
 android {
     compileSdkVersion 26
@@ -13,7 +13,9 @@ android {
 
 
         //Set Configs
-        buildConfigField "String", "BASE_URL", baseurl
+        buildConfigField "String", "BASE_URL", "$base_url"
+        buildConfigField "String", "API_KEY", "$api_key "
+        buildConfigField "String", "SHEET", "$sheet"
     }
     buildTypes {
         release {

@@ -60,3 +60,7 @@ freeline_project_description.json
 
 #DS store
 .DS_Store
+
+#config file
+app/config.gradle
+app/config_app.gradle
