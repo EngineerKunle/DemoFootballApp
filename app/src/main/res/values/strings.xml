@@ -10,4 +10,6 @@
     <string name="player_name">Name</string>
     <string name="player_appearance">Appearances</string>
     <string name="player_goals_stats">Goals</string>
+
+    <string name="player_apps_text">Apps : </string>
 </resources>

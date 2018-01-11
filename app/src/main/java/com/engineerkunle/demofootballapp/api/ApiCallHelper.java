@@ -1,6 +1,10 @@
 package com.engineerkunle.demofootballapp.api;
 
 
+import com.engineerkunle.demofootballapp.api.model.DemoApiResponse;
+
+import io.reactivex.Observable;
+
 public interface ApiCallHelper {
-    void requestPlayersStats();
+    Observable<DemoApiResponse> requestPlayersStats(String id, String sheet);
 }

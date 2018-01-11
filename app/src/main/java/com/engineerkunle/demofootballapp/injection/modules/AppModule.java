@@ -23,4 +23,8 @@ public class AppModule {
     Context provideContext() {
         return demoFootballApp;
     }
+
+//    @AppScope
+//    @Provides
+//    ApiCallHelper getApi() {return  caller; }
 }

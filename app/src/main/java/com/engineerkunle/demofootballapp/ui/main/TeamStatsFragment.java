@@ -2,30 +2,41 @@ package com.engineerkunle.demofootballapp.ui.main;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.Toast;
 
 import com.engineerkunle.demofootballapp.DemoFootballApp;
 import com.engineerkunle.demofootballapp.R;
+import com.engineerkunle.demofootballapp.api.model.RecordClass;
 import com.engineerkunle.demofootballapp.injection.modules.FragmentModule;
+import com.engineerkunle.demofootballapp.ui.adapter.StatsAdapter;
 import com.engineerkunle.demofootballapp.ui.base.BaseFragment;
+
+import java.util.List;
 
 import javax.inject.Inject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 
 public class TeamStatsFragment extends BaseFragment implements MainView {
 
     @Inject
     MainPresenter<MainView> presenter;
 
-    @BindView(R.id.debug_button)
-    Button debugButton;
+
+    @BindView(R.id.swipeContainer)
+    SwipeRefreshLayout swipeRefreshLayout;
+
+    @BindView(R.id.recycler_stats_view)
+    RecyclerView recyclerView;
+
+    private static final String TAG = TeamStatsFragment.class.getSimpleName();
 
 
     public TeamStatsFragment() {}
@@ -40,6 +51,7 @@ public class TeamStatsFragment extends BaseFragment implements MainView {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_team_stats, container, false);
         ButterKnife.bind(this, view);
+        initView();
         return view;
     }
 
@@ -57,7 +69,7 @@ public class TeamStatsFragment extends BaseFragment implements MainView {
 
     @Override
     public void showToast(String text) {
-        Toast.makeText(getActivity(), text, Toast.LENGTH_SHORT).show();
+        Log.d(TAG, text);
     }
 
     @Override
@@ -67,8 +79,24 @@ public class TeamStatsFragment extends BaseFragment implements MainView {
                 .inject(this);
     }
 
-    @OnClick(R.id.debug_button)
-    void debugButtonPressed() {
-        presenter.buttonPressed("I have been pressed");
+
+    private void initView() {
+        swipeRefreshLayout.setOnRefreshListener(swipeRefresherListener);
+    }
+
+
+    private SwipeRefreshLayout.OnRefreshListener swipeRefresherListener = new SwipeRefreshLayout.OnRefreshListener() {
+        @Override
+        public void onRefresh() {
+            presenter.callApi();
+        }
+    };
+
+    @Override
+    public void setUpList(List<RecordClass> results) {
+        StatsAdapter adapter = new StatsAdapter(results);
+        recyclerView.setAdapter(adapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        swipeRefreshLayout.setRefreshing(false);
     }
 }
