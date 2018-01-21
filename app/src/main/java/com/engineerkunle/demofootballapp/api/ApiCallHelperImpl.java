@@ -9,7 +9,7 @@ import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class ApiCallHelperImpl implements ApiCallHelper {
+public final class ApiCallHelperImpl implements ApiCallHelper {
     private Retrofit retrofit;
 
     public ApiCallHelperImpl() {

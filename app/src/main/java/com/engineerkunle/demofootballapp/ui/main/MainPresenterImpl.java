@@ -1,7 +1,6 @@
 package com.engineerkunle.demofootballapp.ui.main;
 
 import com.engineerkunle.demofootballapp.BuildConfig;
-import com.engineerkunle.demofootballapp.api.ApiCallHelper;
 import com.engineerkunle.demofootballapp.api.ApiCallHelperImpl;
 import com.engineerkunle.demofootballapp.api.model.DemoApiResponse;
 import com.engineerkunle.demofootballapp.ui.base.BasePresenterImpl;
@@ -16,17 +15,18 @@ public class MainPresenterImpl<V extends MainView> extends BasePresenterImpl<V>
         implements MainPresenter<V> {
 
     private static final String TAG = "MainPresenterImpl";
-    private ApiCallHelper getApi;
+
+    private ApiCallHelperImpl getApi;
 
     @Inject
-    public MainPresenterImpl() {
+    public MainPresenterImpl(ApiCallHelperImpl getApi) {
         super();
+        this.getApi = getApi;
     }
 
     @Override
     public void attach(V view) {
         super.attach(view);
-        getApi = new ApiCallHelperImpl();
     }
 
     @Override

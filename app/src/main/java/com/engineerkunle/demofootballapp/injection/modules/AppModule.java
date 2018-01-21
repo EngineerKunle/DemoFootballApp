@@ -4,6 +4,7 @@ import android.content.Context;
 import android.support.annotation.NonNull;
 
 import com.engineerkunle.demofootballapp.DemoFootballApp;
+import com.engineerkunle.demofootballapp.api.ApiCallHelperImpl;
 import com.engineerkunle.demofootballapp.injection.scopes.AppScope;
 
 import dagger.Module;
@@ -24,7 +25,7 @@ public class AppModule {
         return demoFootballApp;
     }
 
-//    @AppScope
-//    @Provides
-//    ApiCallHelper getApi() {return  caller; }
+    @AppScope
+    @Provides
+    ApiCallHelperImpl provideApi() {return new ApiCallHelperImpl();}
 }

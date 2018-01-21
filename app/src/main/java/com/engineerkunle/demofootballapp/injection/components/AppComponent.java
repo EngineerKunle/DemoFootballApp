@@ -1,8 +1,8 @@
 package com.engineerkunle.demofootballapp.injection.components;
 
 import com.engineerkunle.demofootballapp.DemoFootballApp;
-import com.engineerkunle.demofootballapp.injection.modules.AppModule;
 import com.engineerkunle.demofootballapp.injection.modules.ActivityModule;
+import com.engineerkunle.demofootballapp.injection.modules.AppModule;
 import com.engineerkunle.demofootballapp.injection.modules.FragmentModule;
 import com.engineerkunle.demofootballapp.injection.scopes.AppScope;
 

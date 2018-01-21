@@ -4,6 +4,7 @@ import android.app.Application;
 
 import com.engineerkunle.demofootballapp.injection.components.AppComponent;
 import com.engineerkunle.demofootballapp.injection.components.DaggerAppComponent;
+import com.engineerkunle.demofootballapp.injection.modules.AppModule;
 
 public class DemoFootballApp extends Application{
 
@@ -13,7 +14,8 @@ public class DemoFootballApp extends Application{
     public void onCreate() {
         super.onCreate();
 
-        appComponent = DaggerAppComponent.builder().build();
+        appComponent = DaggerAppComponent.builder()
+                .appModule(new AppModule(this)).build();
         appComponent.inject(this);
 
     }
